@@ -17,7 +17,7 @@ class ReactRequestHandler(SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     HOST = "0.0.0.0" 
-    PORT = 8000
+    PORT = 2000
     with socketserver.TCPServer((HOST, PORT), ReactRequestHandler) as httpd:
         print(f"Serving React app at http://{HOST}:{PORT}")
         httpd.serve_forever()
