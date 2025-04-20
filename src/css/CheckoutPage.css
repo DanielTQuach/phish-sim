@@ -2,15 +2,16 @@
     width: 225px;
     height: auto;
     display: block;
+    padding-top: 5px;
   }
   
   .top-container {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    height: 45px;
+    height: 50px;
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: #e4e4e4 1px solid;
     z-index: 10;
     position: relative;
   }
@@ -22,6 +23,25 @@
     align-items: flex-start;
     gap: 20px;
     flex-wrap: wrap;
+  }
+
+  .top-row-info {
+    padding-top: 2px;
+    font-size: 15px;
+    display: flex;
+    padding-left: 30%;
+    font-weight: 500;
+    color: rgb(85, 85, 85);
+    gap: 30px;
+  }
+
+  .top-account-text {
+    padding-top: 2px;
+    font-size: 15px;
+    display: flex;
+    padding-left: 26%;
+    font-weight: 500;
+    color: rgb(85, 85, 85);
   }
 
   .main-container {
@@ -42,6 +62,7 @@
     width: 700px;
     margin-bottom: 18px;
     min-width: 300px;
+    width: 810px;
     padding: 80px;
     border-radius: 8px;
     border: 1px solid #ccc;
@@ -50,10 +71,57 @@
   .order-card {
     width: 300px;
     margin-bottom: 18px;
-    padding: 80px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 0px;
+    padding-bottom: 100px;
+    width: 370px;
+    height: 145px;
     border-radius: 8px;
     border: 1px solid #ccc;
     margin-left: auto;
+  }
+
+  .order-summary h1{
+    font-size: 20px;
+    padding-top: 10px;
+  }
+
+  .order-text {
+    color: gray;
+    font-weight: 550;
+  }
+
+  .order-textBlack {
+    color: black;
+    text-align: right;
+  }
+
+  .order-textTotal {
+    color: black;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .order-textTotalNum {
+    color: black;
+    font-weight: bold;
+  }
+
+
+  .order-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .order-text,
+  .order-textBlack {
+    flex: 1;
+  }
+  
+  .order-textBlack {
+    text-align: right;
+    color: black;
   }
   
   h1 {
@@ -105,19 +173,52 @@
   }
   
   button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
+    width: 29.5%;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 505;
     color: white;
     background-color: #005eff;
     border: 1px solid #005eff;
     border-radius: 4px;
-    margin-top: 8px;
+    margin-top: -50px;
     cursor: pointer;
     box-sizing: border-box;
+  
+    display: block;
+    margin-left: auto; /* pushes it to the right */
   }
   
   .footer {
     margin-top: 20px;
   }
+
+  .line {
+    height: 1px;
+    background-color: #ccc;
+    width: 100%;
+  }
   
+  .privacy-text {
+    color: gray;
+    font-weight: 500;
+    width: 30%;
+    margin-left: auto;
+    padding-top: 10px;
+    text-align: center;
+  }
+  .blue-text {
+    color: #005eff;
+  }
+
+  .description-text {
+    color: gray;
+    font-weight: 500;
+    padding-left: 20px;
+  }
+
+  .shipping-payment-text {
+    color: black;
+    padding-left: 20px;
+    margin-bottom: -10px;
+  }
