@@ -98,10 +98,13 @@ function CheckoutPage() {
             </p>
           </div>
 
-        <div className="card shipping-card">
-          <h1>Shipping Method</h1>
-          <p>Standard, Express, etc.</p>
-        </div>
+          <div className="card shipping-method ">
+            <div className ="shipping-information-text">
+              <p>Shipping Method</p>
+            </div>
+            <div className = "order-row">
+            </div>
+          </div>
 
         <div className="card shipping-card">
           <h1>Payment Method</h1>

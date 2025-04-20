@@ -58,14 +58,26 @@
   }
 
   .shipping-card {
+    margin-bottom: 20px;
+    min-width: 300px;
+    width: 950px;
+    border: 1px solid #ccc;
+    min-height: 200px;
+    height: auto;
+    padding-left: 25px;
+    padding-bottom: 20px;
+  }
+
+  .shipping-method {
     margin-bottom: 18px;
     min-width: 300px;
     width: 950px;
     border: 1px solid #ccc;
     min-height: 200px;
-    height: 270px;
+    height: auto;
     padding-left: 25px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+    margin-top: -100px;
   }
   
   .order-card {
@@ -243,14 +255,16 @@
   }
 
   .custom-textbox {
-    margin-top: 5px; /* pushes it down */
+    margin-top: 5px;
+    margin-bottom: 10px;
     font-size: 14px;
     background-color: white;
+    color: black;
+    width: 85%;
+    height: 36px;
+    border-radius: 4px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    width: 85%; /* or desired width */
-    height: 30px;
-    border: none;
-    margin-bottom: 10px;
+    border: 1px solid transparent;
   }
 
   .custom-textbox-city {
@@ -259,8 +273,9 @@
     background-color: white;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     width: 79%; /* or desired width */
-    height: 30px;
-    border: none;
+    height: 36px;
+    pointer-events: auto;
+    border: 1px solid transparent;
   }
 
   .order-row {
