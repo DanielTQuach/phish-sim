@@ -106,10 +106,13 @@ function CheckoutPage() {
             </div>
           </div>
 
-        <div className="card shipping-card">
-          <h1>Payment Method</h1>
-          <p>Credit card, PayPal, etc.</p>
-        </div>
+          <div className="card payment-method ">
+            <div className ="shipping-information-text">
+              <p>Payment Method</p>
+            </div>
+            <div className = "order-row">
+            </div>
+          </div>
       </div>
     </div>
   );

@@ -79,6 +79,17 @@
     padding-bottom: 20px;
     margin-top: -100px;
   }
+
+  .payment-method {
+    margin-bottom: 18px;
+    min-width: 300px;
+    width: 950px;
+    border: 1px solid #ccc;
+    min-height: 200px;
+    height: auto;
+    padding-left: 25px;
+    padding-bottom: 20px;
+  }
   
   .order-card {
     width: 300px;
