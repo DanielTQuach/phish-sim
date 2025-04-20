@@ -1,10 +1,10 @@
 import React from 'react';
-import SignInPage from './SignInPage';
+import CheckoutPage from './CheckoutPage';
 
 function App() {
   return (
     <div className="App">
-      <SignInPage />
+      <CheckoutPage />
     </div>
   );
 }
