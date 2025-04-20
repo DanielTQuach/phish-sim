@@ -24,9 +24,40 @@ function CheckoutPage() {
       </div>
       <div className="main-container">
         <div className="top-row">
-          <div className="card shipping-card">
-            <h1>Shipping Information</h1>
-            <p>Address, name, etc.</p>
+          <div className="card shipping-card ">
+            <div className ="shipping-information-text">
+              <p>Shipping Information</p>
+            </div>
+            <div className="order-row">
+              <div className="shipping-info-col">
+                <div className="shipping-information-info">First Name</div>
+                <input type="text" className="custom-textbox" />
+              </div>
+              <div className="shipping-info-col last-name">
+                <div className="shipping-information-info">Last Name</div>
+                <input type="text" className="custom-textbox" />
+              </div>
+            </div>
+            <div className = "order-row">
+            <div className="shipping-info-col">
+                <div className="shipping-information-info">Address</div>
+                <input type="text" className="custom-textbox" />
+              </div>
+            </div>
+            <div className="order-row">
+              <div className="shipping-info-col">
+                <div className="shipping-information-info">City</div>
+                <input type="text" className="custom-textbox-city" />
+              </div>
+              <div className="shipping-info-col last-name">
+                <div className="shipping-information-info">State</div>
+                <input type="text" className="custom-textbox-city" />
+              </div>
+              <div className="shipping-info-col last-name">
+                <div className="shipping-information-info">Zip</div>
+                <input type="text" className="custom-textbox-city" />
+              </div>
+            </div>
           </div>
 
           <div className="card order-card">
