@@ -1,0 +1,306 @@
+.logo {
+    width: 225px;
+    height: auto;
+    display: block;
+    padding-top: 5px;
+  }
+  
+  .top-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 50px;
+    background-color: white;
+    border-bottom: #e4e4e4 1px solid;
+    z-index: 10;
+    position: relative;
+  }
+
+  .top-row {
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .top-row-info {
+    padding-top: 2px;
+    font-size: 15px;
+    display: flex;
+    padding-left: 30%;
+    font-weight: 500;
+    color: rgb(85, 85, 85);
+    gap: 30px;
+  }
+
+  .top-account-text {
+    padding-top: 2px;
+    font-size: 15px;
+    display: flex;
+    padding-left: 26%;
+    font-weight: 500;
+    color: rgb(85, 85, 85);
+  }
+
+  .main-container {
+    padding: 20px;
+    background-color: white;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 8px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .shipping-card {
+    margin-bottom: 20px;
+    min-width: 300px;
+    width: 950px;
+    border: 1px solid #ccc;
+    min-height: 200px;
+    height: auto;
+    padding-left: 25px;
+    padding-bottom: 20px;
+  }
+
+  .shipping-method {
+    margin-bottom: 18px;
+    min-width: 300px;
+    width: 950px;
+    border: 1px solid #ccc;
+    min-height: 200px;
+    height: auto;
+    padding-left: 25px;
+    padding-bottom: 20px;
+    margin-top: -100px;
+  }
+
+  .payment-method {
+    margin-bottom: 18px;
+    min-width: 300px;
+    width: 950px;
+    border: 1px solid #ccc;
+    min-height: 200px;
+    height: auto;
+    padding-left: 25px;
+    padding-bottom: 20px;
+  }
+  
+  .order-card {
+    width: 300px;
+    margin-bottom: 18px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 0px;
+    padding-bottom: 100px;
+    width: 370px;
+    height: 145px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-left: auto;
+    margin-bottom: 60px;
+  }
+
+  .order-summary h1{
+    font-size: 20px;
+    padding-top: 10px;
+  }
+
+  .order-text {
+    color: gray;
+    font-weight: 550;
+  }
+
+  .order-textBlack {
+    color: black;
+    text-align: right;
+  }
+
+  .order-textTotal {
+    color: black;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .order-textTotalNum {
+    color: black;
+    font-weight: bold;
+  }
+
+
+  .order-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .order-text,
+  .order-textBlack {
+    flex: 1;
+  }
+  
+  .order-textBlack {
+    text-align: right;
+    color: black;
+  }
+  
+  h1 {
+    font-size: 30px;
+    color: black;
+    font-weight: 800;
+  }
+
+  h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 40px;
+  }
+  
+  .input-container {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+  }
+  
+  .label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .link {
+    font-size: 12px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 8px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    width: 29.5%;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 505;
+    color: white;
+    background-color: #005eff;
+    border: 1px solid #005eff;
+    border-radius: 4px;
+    margin-top: -55px;
+    cursor: pointer;
+    box-sizing: border-box;
+  
+    display: block;
+    margin-left: auto; /* pushes it to the right */
+  }
+  
+  .footer {
+    margin-top: 20px;
+  }
+
+  .line {
+    height: 1px;
+    background-color: #ccc;
+    width: 100%;
+  }
+  
+  .privacy-text {
+    color: gray;
+    font-weight: 500;
+    width: 30%;
+    margin-left: auto;
+    padding-top: 10px;
+    text-align: center;
+  }
+  .blue-text {
+    color: #005eff;
+  }
+
+  .description-text {
+    color: gray;
+    font-weight: 500;
+    padding-left: 20px;
+  }
+
+  .shipping-payment-text {
+    color: black;
+    padding-left: 20px;
+    margin-bottom: -10px;
+  }
+
+  .shipping-information-text {
+    align-self: flex-start;
+    margin-top: 0;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .shipping-information-info {
+    font-weight: 500;
+    color: rgb(85, 85, 85);
+  }
+
+  .shipping-information-info-last {
+    font-weight: 500;
+    color: rgb(85, 85, 85);
+    padding-right: 30%;
+  }
+
+  .custom-textbox {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    background-color: white;
+    color: black;
+    width: 85%;
+    height: 36px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border: 1px solid transparent;
+  }
+
+  .custom-textbox-city {
+    margin-top: 5px; /* pushes it down */
+    font-size: 14px;
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    width: 79%; /* or desired width */
+    height: 36px;
+    pointer-events: auto;
+    border: 1px solid transparent;
+  }
+
+  .order-row {
+    display: flex;
+    gap: 20px; /* optional: space between columns */
+  }
+  
+  .shipping-info-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .last-name {
+    margin-left: -80px; /* move it closer to the left */
+  }
+  
