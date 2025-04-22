@@ -1,11 +1,14 @@
 import React from 'react';
-import CheckoutPage from './CheckoutPage';
+import { Routes, Route } from 'react-router-dom';
+import SignInPage from './signin/page';
+import CheckoutPage from './checkout/page'; // Create this component if it doesn't exist
 
 function App() {
   return (
-    <div className="App">
-      <CheckoutPage />
-    </div>
+    <Routes>
+      <Route path="/" element={<SignInPage />} />
+      <Route path="/checkout" element={<CheckoutPage />} />
+    </Routes>
   );
 }
 
