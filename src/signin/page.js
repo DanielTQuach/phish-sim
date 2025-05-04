@@ -10,8 +10,8 @@ function SignInPage() {
   }
   return (
     <div className="main-container">
-      <div className="card">
-        <img src="/TeslaLogo.png" alt="Tesla Logo" className="logo" />
+      <div className="card-container">
+        <img src="/TeslaLogo.png" alt="Tesla Logo" className="logo-2" />
         <h1>Sign in to your Tesla Account</h1>
         <form onSubmit={handleSignIn}>
           <div className="input-container">
