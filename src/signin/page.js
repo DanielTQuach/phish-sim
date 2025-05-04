@@ -1,13 +1,19 @@
 import React from 'react';
-import './css/SignInPage.css';
+import '../css/SignInPage.css';
+import { useNavigate } from 'react-router-dom';
 
 function SignInPage() {
+  const navigate = useNavigate();
+  const handleSignIn = (event) => {
+    event.preventDefault();
+    navigate('/checkout');
+  }
   return (
     <div className="main-container">
       <div className="card">
         <img src="/TeslaLogo.png" alt="Tesla Logo" className="logo" />
         <h1>Sign in to your Tesla Account</h1>
-        <form>
+        <form onSubmit={handleSignIn}>
           <div className="input-container">
             <label htmlFor="email">Email Address</label>
             <input

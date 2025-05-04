@@ -1,306 +1,340 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.logo-container {
+  flex: 0 0 auto;
+}
+
 .logo {
-    width: 225px;
-    height: auto;
-    display: block;
-    padding-top: 5px;
-  }
-  
-  .top-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    height: 50px;
-    background-color: white;
-    border-bottom: #e4e4e4 1px solid;
-    z-index: 10;
-    position: relative;
-  }
+  width: 120px;
+  height: auto;
+}
 
-  .top-row {
-    display: flex;
-    flex-direction: row; 
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
+.navigation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
 
-  .top-row-info {
-    padding-top: 2px;
-    font-size: 15px;
-    display: flex;
-    padding-left: 30%;
-    font-weight: 500;
-    color: rgb(85, 85, 85);
-    gap: 30px;
-  }
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
 
-  .top-account-text {
-    padding-top: 2px;
-    font-size: 15px;
-    display: flex;
-    padding-left: 26%;
-    font-weight: 500;
-    color: rgb(85, 85, 85);
-  }
+.account-link {
+  margin-left: auto;
+}
 
-  .main-container {
-    padding: 20px;
-    background-color: white;
-  }
-  
-  .card {
-    background-color: white;
-    border-radius: 8px;
-    color: black;
-    display: flex;
+.account-link a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Main content styles */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Layout */
+.content-container {
+  max-width: 1050px;
+  margin: 0;
+}
+
+.columns-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.left-column {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.right-column {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Card styles */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+/* Form styles */
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+}
+
+.form-group label {
+  text-align: left;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.form-control {
+  padding: 0.3rem;
+  border: none; /* Remove border */
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background-color: #fff; /* White background */
+  box-shadow: 0 2px 8px 0 rgba(60, 72, 88, 0.06); /* Soft shadow */
+  transition: box-shadow 0.5s;
+}
+
+.half {
+  flex: 1;
+}
+
+.third {
+  flex: 1;
+}
+
+.full {
+  flex: 1 0 100%;
+}
+
+/* Radio button styles */
+.radio-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-custom {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+
+.radio-container input:checked ~ .radio-custom::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #3e6ae1;
+}
+
+.option-label {
+  margin: 0;
+  padding: 0;
+}
+
+.option-price {
+  font-weight: 500;
+  margin-left: auto;
+}
+
+/* Shipping options */
+.shipping-option {
+  border: 1px solid #e5e7eb;      /* Light gray border */
+  border-radius: 8px;             /* Rounded corners */
+  padding: 0.5rem;                  /* Space inside the border */
+  margin-bottom: 1rem;            /* Space between options */
+  background: #fff;               /* white background */
+  display: flex;
+  align-items: center;
+}
+
+/* Payment options */
+.payment-option {
+  border: 1px solid #e5e7eb;      /* Light gray border */
+  border-radius: 8px;             /* Rounded corners */
+  padding: 0.5rem;                  /* Space inside the border */
+  margin-bottom: 1rem;            /* Space between options */
+  background: #fff;               /* white background */
+  display: flex;
+  align-items: center;
+}
+
+.card-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.card-icon {
+  width: 40px;
+  height: 24px;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+/* Order summary */
+.order-summary-card {
+  margin-bottom: 1.5rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.summary-label {
+  color: #666;
+}
+
+.summary-value {
+  font-weight: 500;
+}
+
+.summary-row.total {
+  margin-top: 0.75rem;
+  font-weight: 700;
+}
+
+.summary-row.total .summary-label,
+.summary-row.total .summary-value {
+  color: #000;
+}
+
+.summary-divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 0.75rem 0;
+}
+
+/* Button */
+.primary-button {
+  padding: 0.875rem;
+  background-color: #3e6ae1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.primary-button:hover {
+  background-color: #3458c0;
+}
+
+/* Terms text */
+.terms-text {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.terms-link {
+  color: #3e6ae1;
+  text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .columns-wrapper {
     flex-direction: column;
   }
-
-  .shipping-card {
-    margin-bottom: 20px;
-    min-width: 300px;
-    width: 950px;
-    border: 1px solid #ccc;
-    min-height: 200px;
-    height: auto;
-    padding-left: 25px;
-    padding-bottom: 20px;
-  }
-
-  .shipping-method {
-    margin-bottom: 18px;
-    min-width: 300px;
-    width: 950px;
-    border: 1px solid #ccc;
-    min-height: 200px;
-    height: auto;
-    padding-left: 25px;
-    padding-bottom: 20px;
-    margin-top: -100px;
-  }
-
-  .payment-method {
-    margin-bottom: 18px;
-    min-width: 300px;
-    width: 950px;
-    border: 1px solid #ccc;
-    min-height: 200px;
-    height: auto;
-    padding-left: 25px;
-    padding-bottom: 20px;
-  }
   
-  .order-card {
-    width: 300px;
-    margin-bottom: 18px;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 0px;
-    padding-bottom: 100px;
-    width: 370px;
-    height: 145px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    margin-left: auto;
-    margin-bottom: 60px;
+  .right-column {
+    order: -1;
   }
-
-  .order-summary h1{
-    font-size: 20px;
-    padding-top: 10px;
-  }
-
-  .order-text {
-    color: gray;
-    font-weight: 550;
-  }
-
-  .order-textBlack {
-    color: black;
-    text-align: right;
-  }
-
-  .order-textTotal {
-    color: black;
-    text-align: left;
-    font-weight: bold;
-  }
-
-  .order-textTotalNum {
-    color: black;
-    font-weight: bold;
-  }
+}
 
 
-  .order-row {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .order-text,
-  .order-textBlack {
-    flex: 1;
-  }
-  
-  .order-textBlack {
-    text-align: right;
-    color: black;
-  }
-  
-  h1 {
-    font-size: 30px;
-    color: black;
-    font-weight: 800;
-  }
+/* Make all the method and info stuff on the left wider to reach toward order summary */
+.shipping-method-card {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+}
 
-  h2 {
-    font-size: 14px;
-    font-weight: 500;
-    color: black;
-    margin-bottom: 40px;
-  }
-  
-  .input-container {
-    margin-bottom: 30px;
-    text-align: left;
-  }
-  
-  label {
-    font-size: 14px;
-    font-weight: 500;
-    color: black;
-  }
-  
-  .label-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .link {
-    font-size: 12px;
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 8px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    width: 29.5%;
-    padding: 15px;
-    font-size: 15px;
-    font-weight: 505;
-    color: white;
-    background-color: #005eff;
-    border: 1px solid #005eff;
-    border-radius: 4px;
-    margin-top: -55px;
-    cursor: pointer;
-    box-sizing: border-box;
-  
-    display: block;
-    margin-left: auto; /* pushes it to the right */
-  }
-  
-  .footer {
-    margin-top: 20px;
-  }
+.shipping-info-card {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+}
 
-  .line {
-    height: 1px;
-    background-color: #ccc;
-    width: 100%;
-  }
-  
-  .privacy-text {
-    color: gray;
-    font-weight: 500;
-    width: 30%;
-    margin-left: auto;
-    padding-top: 10px;
-    text-align: center;
-  }
-  .blue-text {
-    color: #005eff;
-  }
-
-  .description-text {
-    color: gray;
-    font-weight: 500;
-    padding-left: 20px;
-  }
-
-  .shipping-payment-text {
-    color: black;
-    padding-left: 20px;
-    margin-bottom: -10px;
-  }
-
-  .shipping-information-text {
-    align-self: flex-start;
-    margin-top: 0;
-    font-size: 25px;
-    font-weight: bold;
-  }
-
-  .shipping-information-info {
-    font-weight: 500;
-    color: rgb(85, 85, 85);
-  }
-
-  .shipping-information-info-last {
-    font-weight: 500;
-    color: rgb(85, 85, 85);
-    padding-right: 30%;
-  }
-
-  .custom-textbox {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    background-color: white;
-    color: black;
-    width: 85%;
-    height: 36px;
-    border-radius: 4px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    border: 1px solid transparent;
-  }
-
-  .custom-textbox-city {
-    margin-top: 5px; /* pushes it down */
-    font-size: 14px;
-    background-color: white;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    width: 79%; /* or desired width */
-    height: 36px;
-    pointer-events: auto;
-    border: 1px solid transparent;
-  }
-
-  .order-row {
-    display: flex;
-    gap: 20px; /* optional: space between columns */
-  }
-  
-  .shipping-info-col {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-  
-  .last-name {
-    margin-left: -80px; /* move it closer to the left */
-  }
-  
+.payment-method-card {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+}
