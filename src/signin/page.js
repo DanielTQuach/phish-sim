@@ -1,13 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/SignInPage.css';
 import { useNavigate } from 'react-router-dom';
 
 function SignInPage() {
   const navigate = useNavigate();
-  const handleSignIn = (event) => {
-    event.preventDefault();
-    navigate('/checkout');
-  }
+  const [error, setError] = useState('');
+
+  const handleSignIn = async (event) => {
+
+    console.log('Form submitted'); // debugging
+    
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    try {
+      const response = await fetch('http://localhost:3000/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+  
+      const result = await response.json();
+      console.log('Response from backend:', result);  // debugging
+  
+      if (response.ok) {
+        navigate('/checkout');
+      } 
+      else {
+        setError(result.error || 'An unexpected error occurred');
+      }
+
+    } catch (err) {
+      setError('Failed to sign in. Please try again.');
+      console.error('Error:', err);  // debugging
+    }
+  };
+
   return (
     <div className="main-container">
       <div className="card-container">
