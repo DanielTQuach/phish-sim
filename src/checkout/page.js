@@ -88,6 +88,32 @@ function CheckoutPage() {
                     <div className="card-icon"></div>
                   </div>
                 </div>
+                <div className="form-row">
+                  <div className="form-group half">
+                    <label>First name</label>
+                    <input type="text" className="form-control" />
+                  </div>
+                  <div className="form-group half">
+                    <label>Last name</label>
+                    <input type="text" className="form-control" />
+                  </div>
+                </div>
+                <div className="form-row">
+                  <div className="form-group full">
+                    <label>Credit Card</label>
+                    <input type="text" className="form-control" />
+                  </div>
+                </div>
+                <div className="form-row">
+                  <div className="form-group half">
+                    <label>CVV</label>
+                    <input type="text" className="form-control" />
+                  </div>
+                  <div className="form-group half">
+                    <label>Expiration Date</label>
+                    <input type="text" className="form-control" />
+                  </div>
+                </div>
               </div>
             </div>
 
