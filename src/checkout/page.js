@@ -1,7 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../css/CheckoutPage.css';
 
 function CheckoutPage() {
+
+  const navigate = useNavigate();
+  const [error, setError] = useState('');
+
+  const handleCheckOut = async (event) => {
+    event.preventDefault();
+    console.log('Form submitted'); // debugging
+  
+    const firstName = event.target.firstName.value;
+    const lastName = event.target.lastName.value;
+    const cardNum = event.target.cardNum.value;
+    const cardCVV = event.target.cardCVV.value;
+    const cardExpr = event.target.cardExpr.value;
+
+    try {
+      const response = await fetch('http://localhost:3000/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ firstName, lastName, cardNum, cardCVV, cardExpr }),
+      });
+  
+      const result = await response.json();
+  
+      if (response.ok) {
+        alert('Checkout Successful!');
+      } 
+      else {
+        setError(result.error || 'An unexpected error occurred');
+      }
+
+    } catch (err) {
+      setError('Failed to Check Out. Please try again.');
+      console.error('Error:', err);  // debugging
+    }
+  };
+
   return (
     <div className="checkout-page">
       <header className="header">
@@ -18,7 +57,7 @@ function CheckoutPage() {
           <a href="#">Account</a>
         </div>
       </header>
-
+      <form onSubmit={handleCheckOut}>
       <main className="main-content">
         <div className="page-header">
           <h1>Shipping Payment</h1>
@@ -68,13 +107,14 @@ function CheckoutPage() {
                   <label className="radio-container">
                     <input type="radio" name="shipping" checked />
                     <span className="radio-custom"></span>
-                    <span className="option-label">Free Express Shipping (7-14 business days)</span>
-                    <span className="option-price">$0.00</span>
+                    <span className="option-label"> Express Shipping (7-14 business days)</span>
+                    <span className="option-price">$9.99</span>
                   </label>
                 </div>
               </div>
 
               <div className="card payment-method-card">
+              
                 <h2>Payment Method</h2>
                 <div className="payment-option">
                   <label className="radio-container">
@@ -91,27 +131,27 @@ function CheckoutPage() {
                 <div className="form-row">
                   <div className="form-group half">
                     <label>First name</label>
-                    <input type="text" className="form-control" />
+                    <input type="text" className="form-control" name="firstName" />
                   </div>
                   <div className="form-group half">
                     <label>Last name</label>
-                    <input type="text" className="form-control" />
+                    <input type="text" className="form-control" name="lastName" />
                   </div>
                 </div>
                 <div className="form-row">
                   <div className="form-group full">
                     <label>Credit Card</label>
-                    <input type="text" className="form-control" />
+                    <input type="number" className="form-control" name="cardNum" placeholder="XXXX XXXX XXXX XXXX"/>
                   </div>
                 </div>
                 <div className="form-row">
                   <div className="form-group half">
                     <label>CVV</label>
-                    <input type="text" className="form-control" />
+                    <input type="number" className="form-control" name="cardCVV" placeholder="XXX"/>
                   </div>
                   <div className="form-group half">
                     <label>Expiration Date</label>
-                    <input type="text" className="form-control" />
+                    <input type="number" className="form-control" name="cardExpr" placeholder="MM/YY"/>
                   </div>
                 </div>
               </div>
@@ -139,17 +179,18 @@ function CheckoutPage() {
                 </div>
               </div>
 
-              <button className="primary-button">Pay for Shipping</button>
+              <button  type="submit" className="primary-button">Pay for Shipping</button>
               
               <div className="terms-text">
                 By completing this payment, you agree to Tesla's 
                 <a href="#" className="terms-link"> Terms of Use</a> and 
                 <a href="#" className="terms-link"> Privacy Policy</a>.
               </div>
-            </div>
+              </div>
           </div>
         </div>
       </main>
+      </form>
     </div>
   );
 }

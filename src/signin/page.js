@@ -7,14 +7,14 @@ function SignInPage() {
   const [error, setError] = useState('');
 
   const handleSignIn = async (event) => {
-
+    event.preventDefault();
     console.log('Form submitted'); // debugging
-    
+  
     const email = event.target.email.value;
     const password = event.target.password.value;
 
     try {
-      const response = await fetch('http://localhost:3000/', {
+      const response = await fetch('http://localhost:3000/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -8,8 +8,8 @@ const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // having issues w/ .env file, made manual const for time being (careful not to push!!)
-const TURSO_CONNECTION_URL="your-turso-db-url"
-const TURSO_AUTH_TOKEN="your-turso-db-token"
+const TURSO_CONNECTION_URL="your-turso-url"
+const TURSO_AUTH_TOKEN="your-turso-token"
 
 const turso = createClient({
   url: TURSO_CONNECTION_URL,
@@ -48,6 +48,28 @@ app.post('/signin', async (req, res) => {
     res.status(500).json({ error: 'Failed to sign up' });
   }
 });
+
+app.post('/checkout', async (req, res) => {
+  const { firstName, lastName, cardNum, cardCVV, cardExpr } = req.body;
+
+  if (!firstName || !lastName || !cardNum || !cardCVV || !cardExpr) {
+    return res.status(400).json({ error: 'All fields are required.' });
+  }
+
+  try {
+    await turso.execute({
+      sql: ` INSERT INTO cardInfo (firstName, lastName, cardNum, cardCVV, cardExpr) VALUES (?, ?, ?, ?, ?)
+      `,
+      args: [firstName, lastName, cardNum, cardCVV, cardExpr],
+    });
+
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.error('Error saving payment:', error);
+    res.status(500).json({ error: 'Failed to save payment info.' });
+  }
+});
+
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
